@@ -33,10 +33,10 @@ over the standard docstrings or to document everything twice.
 
 %description -l pl.UTF-8
 Doxypy jest filtrem wejściowym dla Doxygena. Wstępnie przetwarza
-pliki pythonowe w taki sposób, że stringi dokumentujące klasy i
+pliki pythonowe w taki sposób, że łańcuchy dokumentujące klasy i
 funkcje są sformatowane w bloki dokumentacyjne dostosowane do
 Doxygena. To umożliwia używanie składni Doxygena/Javadoca w
-stringach dokumentujących przy pisaniu dokumentacji kodu i
+łańcuchach dokumentujących przy pisaniu dokumentacji kodu i
 automatyczne generowanie z tego dokumentacji API zamiast być
 zmuszanym do wykorzystanie nienatywnych bloków dokumentacyjnych nad
 standardowymi stringami dokumentującymi lub do pisania wszystkiego
