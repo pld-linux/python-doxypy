@@ -1,17 +1,18 @@
 #
 # TODO:
+# - it's installed as script not module - should be named just doxypy?
 # - make the documentation more good sounding
 #
-%define         _module         doxypy
+%define         module         doxypy
 
 Summary:	Input filter of python code for Doxygen
-Summary(pl.UTF-8):Filtr wejściowy kodu pythonowego dla Doxygena.
-Name:		python-%{_module}
+Summary(pl.UTF-8):	Filtr wejściowy kodu pythonowego dla Doxygena
+Name:		python-%{module}
 Version:	0.2.2
 Release:	0.1
 License:	GPLv2
 Group:		Development/Languages/Python
-Source0:	http://code.foosel.net/files/%{_module}-%{version}.py
+Source0:	http://code.foosel.net/files/%{module}-%{version}.py
 # Source0-md5:	284833a9b38acafc94cb2efc491a873e
 URL:		http://code.foosel.org/doxypy
 BuildRequires:	python-devel >= 2.2
@@ -32,28 +33,27 @@ instead of being forced to use the non-native documentation blocks
 over the standard docstrings or to document everything twice.
 
 %description -l pl.UTF-8
-Doxypy jest filtrem wejściowym dla Doxygena. Wstępnie przetwarza
-pliki pythonowe w taki sposób, że łańcuchy dokumentujące klasy i
-funkcje są sformatowane w bloki dokumentacyjne dostosowane do
-Doxygena. To umożliwia używanie składni Doxygena/Javadoca w
-łańcuchach dokumentujących przy pisaniu dokumentacji kodu i
-automatyczne generowanie z tego dokumentacji API zamiast być
-zmuszanym do wykorzystanie nienatywnych bloków dokumentacyjnych nad
-standardowymi stringami dokumentującymi lub do pisania wszystkiego
-dwa razy.
+Doxypy jest filtrem wejściowym dla Doxygena. Wstępnie przetwarza pliki
+pythonowe w taki sposób, że łańcuchy dokumentujące klasy i funkcje są
+sformatowane w bloki dokumentacyjne dostosowane do Doxygena. To
+umożliwia używanie składni Doxygena/Javadoca w łańcuchach
+dokumentujących przy pisaniu dokumentacji kodu i automatyczne
+generowanie z tego dokumentacji API zamiast być zmuszanym do
+wykorzystania obcych bloków dokumentacyjnych nad standardowymi
+łańcuchami dokumentującymi lub do pisania wszystkiego dwa razy.
 
 %prep
-%setup -c -T -q
+%setup -q -c -T
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}/%{_module}
+install %{SOURCE0} $RPM_BUILD_ROOT%{_bindir}/doxypy
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/%{_module}
+%attr(755,root,root) %{_bindir}/doxypy
